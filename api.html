@@ -1,0 +1,74 @@
+<html>
+    <head></head>
+    <body onload="callServer()">
+        <p>
+            Örnek sunucu url'i:
+            https://reqres.in/api/users?page=1
+            https://reqres.in 
+            <br>
+            <br>
+            Görev:  <br>
+            1. Kullanıcıları listele  <br>
+            2. Mevcut sayfa numarasını, toplam kullanıcı sayısını, toplam sayfa sayısını ekranda göster.  <br>
+            3. Yapabiliyorsan sayfalama yap.
+
+            <br>
+            <br>
+
+            örnek bir adres<br>
+
+örnek table row ekleme<br>
+var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];<br>
+
+  // Insert a row in the table at row index 0<br>
+  var newRow   = tableRef.insertRow(tableRef.rows.length);<br>
+  // Insert a cell in the row at index 0<br>
+  var newCell  = newRow.insertCell(0);<br>
+
+  // Append a text node to the cell<br>
+  var newText  = document.createTextNode('New row')<br>
+  newCell.appendChild(newText);<br>
+        </p>
+        <div style="width: 900px;">
+                <table  style="width:100%" id="users">
+                        <thead>
+                            <th>id</th>
+                            <th>email</th>
+                            <th>first_name</th>
+                            <th>last_name</th>
+                            <th>avatar</th>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+        </div>
+
+        <script>
+        function callServer() {
+            var xhr = new XMLHttpRequest();
+            var url = "https://reqres.in/api/users?page=1";
+                xhr.open("GET", url, true);
+                xhr.onload = function(){
+                    var myObj = JSON.parse(xhr.responseText);
+                    var tableRef = document.getElementById('users').getElementsByTagName('tbody')[0];
+                    var i;
+                    for (i = 0; i < myObj.data.length; i++) {
+                        var obj = myObj.data[i];
+                        console.log(obj);
+
+                    }
+                };
+                xhr.send();
+        }
+        </script>
+        <style>
+            table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  height: 20px;
+}
+        </style>
+    </body>
+</html>
