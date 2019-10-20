@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>first web</title>
+</head>
+<body>
+
+<button onclick="myFunction2()">ad girmece</button>
+
+<p id="demo"></p>
+
+<p id="conf">onayla</p>
+
+	<button id="mod">buton deneme 1</button>
+
+<button onclick="aaaa()">alert denemesi</button>
+
+<p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+	
+	<h1>denemeee</h1>
+	
+	<script type="text/javascript">	
+
+
+		var bob = ["a","s","d","c"];
+
+		document.write(bob);
+
+	//	SPLİT İLE STRİNG İÇERİSİNDEKİ KELİMELER HER BOŞLUKTAN SONRA ARRAY OLDU
+		let sentence = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış";
+
+		let split_array = sentence.split(" ");
+
+		let comma = sentence.split(",");//SPLİT İLE HER VİRGÜL OLDUĞUNDA ARRAY OLDU
+
+		console.log(split_array);
+
+const companies = [
+	
+	{name: "company one", category:"finance", start: 1981,end:2003},
+	{name: "company two", category:"sport", start: 1982,end:2002},
+	{name: "company three", category:"sport", start: 1983,end:1999},	
+	{name: "company four", category:"movies" ,start: 1984,end:2001},
+	{name: "company five", category:"ecommerce" ,start: 1985,end:2007},
+];
+//FİLTER
+
+
+const sportt = companies.filter(function(company_category){
+
+	if(company_category.category ==="finance"){
+
+		return true;
+
+	};
+
+});
+console.log (sportt);
+
+
+
+// ARROW FUNC. companies arrayını filtreler eder
+const sport_comp = companies.filter(spr => spr.category === 'sport');
+
+console.log (sport_comp);
+
+document.write(companies[2].name + "<br>");
+
+//MAP array olarak company isimlerini bulur.
+
+const compNames = companies.map(function(comname){
+  	
+  	return comname.name;
+
+});
+console.log(compNames);
+
+//SORT
+
+const sorted = companies.sort(function(c1,c2){
+	
+	if(c1.end > c2.end){
+
+		return 1;
+	}else{
+
+		return -1;
+	}
+
+
+});
+console.log (sorted);
+
+
+/*const compNamess = companies.map(function(commname){
+  	
+  	return commname.name;
+
+});
+console.log(compNamess);*/
+
+
+/*for (let i = 0; i < companies.length; i++){
+
+	console.log(companies[i]);
+};*/
+
+//FOREACH
+
+companies.forEach(function(company){
+
+	document.write(company.name + "<br>");
+});
+
+const ages = [33,21,45,67,43,21,23,4,53,75,69];
+
+//İNDEXOF ARRAY İÇİNDE BELİRTİLEN DEĞER VAR MI DİYE KONTROL EDER.
+
+     var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+
+    
+
+    // Check if a value exists in the fruits array
+
+    if(fruits.indexOf("Banana") !== -1){
+
+        document.write("Value exists!");
+
+    } else{
+
+        document.write("Value does not exists!");
+
+    };
+
+
+//let candrink = [];
+
+//SORT yaşları küçükten büyüğe sıralar
+
+const bages = ages.sort (function(a1,b1){
+
+	if(a1>b1){
+
+		return 1;
+	}else {
+
+		return -1;
+	}
+
+});
+
+console.log(bages);
+
+//FİLTER
+
+const candrink = ages.filter(function(age){
+	if(age >= 21){
+
+		return true;
+	}
+});
+document.write(candrink + "<br>");
+
+//FİLTER 2 ARROW FUNCTİONS
+
+const candrinkk = ages.filter(age => age >= 21);
+document.write(candrinkk + "<br>");
+
+var stuff = ["rtyrdfdftyr","rtytrytr","fdgdfgfd",123213,"213213",23.213];
+var numm = 0;
+var element= 0
+ //var numm = stuff.length;
+
+ //document.write (numm + "<br>");
+
+ while (numm <= stuff.length){
+
+ 	document.write ("array içerisindeki element"+ " " + element++ + " "  + stuff[numm] + "<br>");
+ 	numm++;
+ };
+
+for(var bunny = 0; bunny < 25; bunny+=5){
+
+	document.write("bravo" + "<br>");
+}
+
+
+var fruits = ["muz", "elma","armut","çilek"];
+
+fruits.unshift ("ilk");
+fruits.push ("yeni");
+document.write (fruits[3] + "<br>");
+document.write (fruits.indexOf("çilek"));
+document.write (fruits);
+
+
+function myFunction2() {
+
+  var person = prompt("Please enter your name", "ad girr");
+
+  if (person != null) {
+
+    document.getElementById("demo").innerHTML ="Hello " + person + "! How are you today?";
+
+  }
+}
+
+
+
+document.getElementById("mod").onclick = function (){
+
+	document.getElementById("conf").innerHTML = "deneme oldu";
+
+}
+
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed!";
+}
+
+
+		function aaaa(){
+
+			alert("tıkladın");
+		}
+
+
+	let es = "asassads";
+
+	document.write(es + "<br>")
+	
+
+		function getFee(isMember) {
+  return (isMember ? "$2.00" : "$10.00");
+}
+document.write (getFee(2));
+
+
+		var contacts = [
+		{
+			name : "akira",
+			soy : "kurusava",
+			no : "seven samurai",
+			naton : ["japanese","samurai","drama"]
+		},
+
+		{
+			name : "steven",
+			soy : "spielberg",
+			no : "jurassicpark",
+			naton : ["hollywood","dinazor","thriller"]
+		},
+
+		{
+			name : "james",
+			soy : "cameron",
+			no : "alien",
+			naton : ["sci-fi","space","adventure"]
+		},
+
+		];
+
+
+		function lookup(info, interest) {
+
+			for (var i = 0; i < contacts.length; i++){
+				if(contacts [i].name === info){
+					return	contacts[i][interest] || "böyle birşey yok";
+				};
+				return "calısmadı";
+			};
+
+		};
+
+	var datta = lookup("akira","naton");
+
+			document.write (datta);
+
+
+		var count;
+            document.write("Starting Loop" + "<br />"); //for loop
+         
+            for(count = 0; count < 10; count++) {
+               document.write("Current Count : " + count );
+               document.write("<br />");
+            }         
+            document.write("Loop stopped!");
+
+		var  gnl = 0;
+
+		for (var i = 0; i < 15; i += 2){ //15ten küçük çift sayıların toplamını verir.
+
+			gnl += i;
+		};
+		document.write (gnl + "<br>");
+
+		var uaray = [];
+		
+		for (var i = 0 ; i<6; i++){
+			uaray.push(i); //array içine data ekledi
+		};
+		document.write (uaray + "<br>"); 
+
+		document.write (uaray.length +"burayaa" + "<br>");
+
+		var errey = [2,11,4,12,6,7,56];
+		var total = 0;
+
+		for(var i = 0 ; i < errey.length; i++){
+
+			total += errey[i];
+		};
+		document.write (errey[0] + "<br>");
+		document.write (total + " "+"total burada" + "<br>");
+		document.write (errey.length + " "+"total length burada" + "<br>");
+		document.write (errey + "<br>");
+
+		var myarray= [];
+
+		var ii = 0;
+
+		while (ii < 5 ) {
+
+		myarray.push(ii);
+			ii++;
+};
+
+document.write (myarray);
+
+		function photo(dgr){
+			var snc = "";
+
+			var aa = {
+
+			"bryan": "adams",
+			"mayhem": "true",
+			"varg": "vikernes",
+
+			};
+			snc = aa[dgr];
+			return snc;
+
+		}
+		document.write (photo("mayhem"));
+		
+
+// obje oluşturuldu
+		var person = {
+  		firstName: "John",
+  		lastName : "Doe",
+  		id     :  5566
+		}; //obje özellikleri belirtildi..
+
+		var prsn = person ["firstName"] + person.id; //2 farklı yolla obje özelliklerine ulaşıldı
+		document.write (prsn + "<br>");  //obje özellikleri bastırıldı...
+
+		function kntrl (kntrlobj){ //kontrol fonksiyonu oluşturuldu
+
+			if (person.hasOwnProperty(kntrlobj)) { // person objesinin içinde belirtilen nitelik var mı kontrolü
+
+				return person [kntrlobj];
+
+			}else{
+
+				return "mot found";
+			}
+
+		}
+		document.write (kntrl("firstName")+ "<br>");
+
+
+
+
+
+		var obc = { //obje oluştu
+			rambo: "slyvester",  //obje özellikleri
+			terminator: "arnold",
+			conan: "kenan",
+			film : 3
+		};
+		
+		var der = obc.rambo;//obje özellikklerine ulaşıldı
+		document.write ((der)+ "<br>");//obje özellikleri basıldı
+
+		function ctrl(ctrlobj) {
+
+			if (obc.hasOwnProperty(ctrlobj)) {
+
+				return true;
+			}else{
+
+				return false;
+			}
+		}
+		document.write(ctrl("conan")+"<br>");
+
+
+		function sivic(val) {
+			var cvp = "";
+			switch (val){
+
+			 case 1:
+			 cvp = "alpha" + "<br>";
+			 break;
+			 case 2:
+			 cvp = "beta" + "<br>";
+			 break;
+			 case 3:
+			 cvp ="gamma" + "<br>";
+			 break;
+			 case 4:
+			 cvp ="değişken şuan 4" + "<br>";
+			 break;
+			 default:
+			 cvp ="defalt deneme";
+			 break;
+			}
+			return cvp;
+
+		}document.write(sivic(4));
+
+		function test (val){
+
+			if (val == 20) {
+				return "eşit"+"<br>";
+
+			}
+			return "eşit değil"+"<br>";
+		}
+		document.write (test(20));
+
+		
+
+		var myglobal = "11";
+		function global()
+		{
+
+			if (myglobal == 10) {
+
+				document.write ("sayı 10"+"<br>");
+			}else{
+
+				document.write ("sayı 10 değil!");
+			}
+		};
+		global();
+
+
+		function asd ()
+		{
+			document.write ("fonksiyon denemesi <br>");
+			var vv = "fffdddfsf" + "<br>"
+			document.write (vv);
+		};
+		
+		function math(tt,bb) {
+			document.write (tt-bb , "<br>");
+					};
+
+		var ad = ["katya","kayta","katyush"]
+		var ilk ="";
+		var b= 10;
+		var a= 5;
+		var c= (b+a + "<br>");
+		var f= (0.433 + "<br>");
+		var v="deneme string " + "deneme 2";
+		
+		document.write(c,f);
+		document.write(b-a);
+		document.write(v);
+		ilk = ad[2];
+		document.write(ilk + "<br>");
+		document.write (ad[1]);
+
+		asd();
+		math(20,5);
+		
+		</script>
+	
+	<p>deneme</p>
+
+</body>
+</html>
