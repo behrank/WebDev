@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS ARRAYS</title>
+</head>
+<body>
+
+		<p id="demo"></p>
+    <script>
+
+    //Multidimensional Array 
+		let number = [
+		[12,13,14,15,16],
+		[17,18,19],
+		[20,21,22,23,24],
+		];
+for(let i = 0; i < number.length; i++){ // Multidimensional Array 
+
+	console.log(number[i]); //HER BİR ARRAYI BASAR
+	console.log(number[i].length);
+};
+
+    var bob = ["a","s","d","c"];
+
+		document.write(bob + "<br>");
+
+//	SPLİT İLE STRİNG İÇERİSİNDEKİ KELİMELER HER BOŞLUKTAN SONRA ARRAY OLDU
+let sentence = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış";
+
+let split_array = sentence.split(" ");
+
+let comma = sentence.split(",");//SPLİT İLE HER VİRGÜL OLDUĞUNDA ARRAY OLDU
+
+console.log(split_array);
+
+
+const companies = [
+	
+	{name: "company one", category:"finance", start: 1981,end:2003},
+	{name: "company two", category:"sport", start: 1982,end:2002},
+	{name: "company three", category:"sport", start: 1983,end:1999},	
+	{name: "company four", category:"movies" ,start: 1984,end:2001},
+	{name: "company five", category:"ecommerce" ,start: 1985,end:2007},
+];
+
+
+//FİLTER
+const sportt = companies.filter(function(company_category){
+
+	if(company_category.category ==="finance"){
+
+		return true;
+
+	};
+
+});
+console.log (sportt);
+
+
+// ARROW FUNC. companies arrayını filtreler eder
+const sport_comp = companies.filter(spr => spr.category === 'sport');
+
+console.log (sport_comp);
+
+document.write(companies[2].name + "<br>");
+
+//MAP array olarak company isimlerini bulur.
+
+const compNames = companies.map(function(comname){
+  	
+  	return comname.name;
+
+});
+console.log(compNames);
+
+const food = ["dürüm","çorba","döner"];
+const desset = ["baklava","sütlaç","künefe"];
+const menu = desset.concat(food); // FOOD VE DESSET ARRAYLARINI BİRLEŞTİRDİ YENİ BİR ARRAY ORTAYA ÇIKARDI
+console.log(menu);
+
+
+//SORT
+
+const sorted = companies.sort(function(c1,c2){
+	
+	if(c1.end > c2.end){
+
+		return 1;
+	}else{
+
+		return -1;
+	}
+
+
+});
+console.log (sorted);
+    
+//FOREACH
+
+companies.forEach(function(company){
+
+document.write(company.name + "<br>"); //TÜM ADLARI BASAR
+});
+
+const ages = [33,21,45,67,43,21,23,4,53,75,69,86];
+
+//SORT yaşları küçükten büyüğe sıralar
+
+const bages = ages.sort (function(a1,b1){
+
+if(a1>b1){
+
+    return 1;
+}else {
+
+    return -1;
+}
+
+});
+
+console.log(bages);
+
+//FİLTER 21 yaşında ya da 21 yaşından büyükleri filtlereler
+
+const candrink = ages.filter(function(age){
+	if(age >= 21){
+
+		return true;
+	}
+});
+document.write(candrink + "<br>");
+
+// AGES İÇİNDE 33 ARAR
+let search = 33;
+
+for (let i = 0; i < ages.length; i++){
+
+ if(ages[i] === search){
+     document.write("bulundu" + "<br>");
+     console.log(ages[i]);
+ }else {
+
+    document.write("bulunamadı" + "<br>");
+ };
+};
+
+//AGES İÇİNDE EN BÜYÜK SAYIYI ARAR
+let big_number = ages[0];
+
+for(let i = 0; i < ages.length; i++){  
+
+    if(ages[i] > big_number){
+
+        big_number =ages[i];
+
+    };
+
+};
+console.log(big_number);
+
+// Check if a value exists in the fruits array
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+
+if(fruits.indexOf("Banana") !== -1){
+
+    document.write("Value exists!");
+
+} else{
+
+    document.write("Value does not exists!");
+
+};
+
+//FİLTER 2 ARROW FUNCTİONS
+
+const candrinkk = ages.filter(age => age >= 21);
+document.write(candrinkk + "<br>");
+
+// while döngüsü ile array içerisindeki elementler basıldı
+var stuff = ["rtyrdfdftyr","rtytrytr","fdgdfgfd",123213,"213213",23.213];
+var numm = 0;
+var element= 0
+
+while (numm <= stuff.length){
+
+document.write ("array içerisindeki element"+ " " + element++ + " "  + stuff[numm] + "<br>");
+numm++;
+};
+
+for(var bunny = 0; bunny < 25; bunny+=5){ //5-10-15-25için ayrı ayrı bravo basar bunny her 5 arttığında 
+
+document.write("bravo" + "<br>");
+}
+
+
+var fruits = ["muz", "elma","armut","çilek","karpuz"];
+
+fruits.splice (2,0,"kiwi","limon"); //2.elemeni siler(armut) ve yeniolarak kiwi ve limonu ekler
+fruits.unshift ("ilk"); //arrayın başına element ekler
+fruits.push ("yeni"); // arrayın sonuna yeni element ekler
+fruits.pop();
+document.write (fruits[3] + "<br>");
+document.write (fruits.indexOf("çilek") + "<br>");
+document.write (fruits +" "+ "FRUİTS ARRAYI BURADA" + "<br>");
+fruits.sort(); // FRUİTS ARRAYINI ALFABETİK OLARAK SIRALAR
+const inc = fruits.includes("muz"); //ARRAY İÇERİSİNDE MUZ KELİMESİ VAR MI ARAR VARSA TRUE YOKSA FALSE
+console.log (fruits);
+console.log(inc);
+fruits.forEach(myFunction); //HER BİR ELEMENTİN DEĞER VE SIRASINI YAZAR FOREACH
+
+function myFunction(item, index) {
+  document.getElementById("demo").innerHTML += index + ":" + item + "<br>"; 
+};
+    
+    </script>
+</body>
+</html>

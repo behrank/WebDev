@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>first web</title>
+	<title>HTML&OTHER JS</title>
 </head>
 <body>
 
 <button onclick="myFunction2()">ad girmece</button>
+<p>denemesdfdds</p>
 
 <p id="demo"></p>
 
@@ -20,181 +21,8 @@
 	
 	<h1>denemeee</h1>
 	
-	<script type="text/javascript">	
-
-
-		var bob = ["a","s","d","c"];
-
-		document.write(bob);
-
-	//	SPLİT İLE STRİNG İÇERİSİNDEKİ KELİMELER HER BOŞLUKTAN SONRA ARRAY OLDU
-		let sentence = "dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış";
-
-		let split_array = sentence.split(" ");
-
-		let comma = sentence.split(",");//SPLİT İLE HER VİRGÜL OLDUĞUNDA ARRAY OLDU
-
-		console.log(split_array);
-
-const companies = [
-	
-	{name: "company one", category:"finance", start: 1981,end:2003},
-	{name: "company two", category:"sport", start: 1982,end:2002},
-	{name: "company three", category:"sport", start: 1983,end:1999},	
-	{name: "company four", category:"movies" ,start: 1984,end:2001},
-	{name: "company five", category:"ecommerce" ,start: 1985,end:2007},
-];
-//FİLTER
-
-
-const sportt = companies.filter(function(company_category){
-
-	if(company_category.category ==="finance"){
-
-		return true;
-
-	};
-
-});
-console.log (sportt);
-
-
-
-// ARROW FUNC. companies arrayını filtreler eder
-const sport_comp = companies.filter(spr => spr.category === 'sport');
-
-console.log (sport_comp);
-
-document.write(companies[2].name + "<br>");
-
-//MAP array olarak company isimlerini bulur.
-
-const compNames = companies.map(function(comname){
-  	
-  	return comname.name;
-
-});
-console.log(compNames);
-
-//SORT
-
-const sorted = companies.sort(function(c1,c2){
-	
-	if(c1.end > c2.end){
-
-		return 1;
-	}else{
-
-		return -1;
-	}
-
-
-});
-console.log (sorted);
-
-
-/*const compNamess = companies.map(function(commname){
-  	
-  	return commname.name;
-
-});
-console.log(compNamess);*/
-
-
-/*for (let i = 0; i < companies.length; i++){
-
-	console.log(companies[i]);
-};*/
-
-//FOREACH
-
-companies.forEach(function(company){
-
-	document.write(company.name + "<br>");
-});
-
-const ages = [33,21,45,67,43,21,23,4,53,75,69];
-
-//İNDEXOF ARRAY İÇİNDE BELİRTİLEN DEĞER VAR MI DİYE KONTROL EDER.
-
-     var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
-
-    
-
-    // Check if a value exists in the fruits array
-
-    if(fruits.indexOf("Banana") !== -1){
-
-        document.write("Value exists!");
-
-    } else{
-
-        document.write("Value does not exists!");
-
-    };
-
-
-//let candrink = [];
-
-//SORT yaşları küçükten büyüğe sıralar
-
-const bages = ages.sort (function(a1,b1){
-
-	if(a1>b1){
-
-		return 1;
-	}else {
-
-		return -1;
-	}
-
-});
-
-console.log(bages);
-
-//FİLTER
-
-const candrink = ages.filter(function(age){
-	if(age >= 21){
-
-		return true;
-	}
-});
-document.write(candrink + "<br>");
-
-//FİLTER 2 ARROW FUNCTİONS
-
-const candrinkk = ages.filter(age => age >= 21);
-document.write(candrinkk + "<br>");
-
-var stuff = ["rtyrdfdftyr","rtytrytr","fdgdfgfd",123213,"213213",23.213];
-var numm = 0;
-var element= 0
- //var numm = stuff.length;
-
- //document.write (numm + "<br>");
-
- while (numm <= stuff.length){
-
- 	document.write ("array içerisindeki element"+ " " + element++ + " "  + stuff[numm] + "<br>");
- 	numm++;
- };
-
-for(var bunny = 0; bunny < 25; bunny+=5){
-
-	document.write("bravo" + "<br>");
-}
-
-
-var fruits = ["muz", "elma","armut","çilek"];
-
-fruits.unshift ("ilk");
-fruits.push ("yeni");
-document.write (fruits[3] + "<br>");
-document.write (fruits.indexOf("çilek"));
-document.write (fruits);
-
-
+	<script type="text/javascript">
+ 
 function myFunction2() {
 
   var person = prompt("Please enter your name", "ad girr");
@@ -203,16 +31,9 @@ function myFunction2() {
 
     document.getElementById("demo").innerHTML ="Hello " + person + "! How are you today?";
 
-  }
-}
+  };
+};
 
-
-
-document.getElementById("mod").onclick = function (){
-
-	document.getElementById("conf").innerHTML = "deneme oldu";
-
-}
 
 
 function myFunction() {
@@ -235,48 +56,6 @@ function myFunction() {
   return (isMember ? "$2.00" : "$10.00");
 }
 document.write (getFee(2));
-
-
-		var contacts = [
-		{
-			name : "akira",
-			soy : "kurusava",
-			no : "seven samurai",
-			naton : ["japanese","samurai","drama"]
-		},
-
-		{
-			name : "steven",
-			soy : "spielberg",
-			no : "jurassicpark",
-			naton : ["hollywood","dinazor","thriller"]
-		},
-
-		{
-			name : "james",
-			soy : "cameron",
-			no : "alien",
-			naton : ["sci-fi","space","adventure"]
-		},
-
-		];
-
-
-		function lookup(info, interest) {
-
-			for (var i = 0; i < contacts.length; i++){
-				if(contacts [i].name === info){
-					return	contacts[i][interest] || "böyle birşey yok";
-				};
-				return "calısmadı";
-			};
-
-		};
-
-	var datta = lookup("akira","naton");
-
-			document.write (datta);
-
 
 		var count;
             document.write("Starting Loop" + "<br />"); //for loop
@@ -344,58 +123,6 @@ document.write (myarray);
 		}
 		document.write (photo("mayhem"));
 		
-
-// obje oluşturuldu
-		var person = {
-  		firstName: "John",
-  		lastName : "Doe",
-  		id     :  5566
-		}; //obje özellikleri belirtildi..
-
-		var prsn = person ["firstName"] + person.id; //2 farklı yolla obje özelliklerine ulaşıldı
-		document.write (prsn + "<br>");  //obje özellikleri bastırıldı...
-
-		function kntrl (kntrlobj){ //kontrol fonksiyonu oluşturuldu
-
-			if (person.hasOwnProperty(kntrlobj)) { // person objesinin içinde belirtilen nitelik var mı kontrolü
-
-				return person [kntrlobj];
-
-			}else{
-
-				return "mot found";
-			}
-
-		}
-		document.write (kntrl("firstName")+ "<br>");
-
-
-
-
-
-		var obc = { //obje oluştu
-			rambo: "slyvester",  //obje özellikleri
-			terminator: "arnold",
-			conan: "kenan",
-			film : 3
-		};
-		
-		var der = obc.rambo;//obje özellikklerine ulaşıldı
-		document.write ((der)+ "<br>");//obje özellikleri basıldı
-
-		function ctrl(ctrlobj) {
-
-			if (obc.hasOwnProperty(ctrlobj)) {
-
-				return true;
-			}else{
-
-				return false;
-			}
-		}
-		document.write(ctrl("conan")+"<br>");
-
-
 		function sivic(val) {
 			var cvp = "";
 			switch (val){
@@ -450,13 +177,11 @@ document.write (myarray);
 		function asd ()
 		{
 			document.write ("fonksiyon denemesi <br>");
-			var vv = "fffdddfsf" + "<br>"
-			document.write (vv);
+			
 		};
 		
-		function math(tt,bb) {
-			document.write (tt-bb , "<br>");
-					};
+		
+		asd();
 
 		var ad = ["katya","kayta","katyush"]
 		var ilk ="";
@@ -472,8 +197,11 @@ document.write (myarray);
 		ilk = ad[2];
 		document.write(ilk + "<br>");
 		document.write (ad[1]);
+		
+		function math(tt,bb) {
+			document.write (tt-bb , "<br>");
+					};
 
-		asd();
 		math(20,5);
 		
 		</script>

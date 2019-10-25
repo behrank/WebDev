@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+/*async function getData(){
+const response = await fetch('https://reqres.in/api/users?page=1');
+const data = await response.text();
+};
+getData();
+console.log (data);
+*/
+
+//PROMİSES
+
+let p = new Promise((resolve,reject) => {
+
+let a = 1 + 2
+
+if (a === 2){
+
+  resolve ("başarılı");
+}else {
+  reject ("başarısız");
+}
+
+
+});
+
+p.then((message) => {
+
+console.log ("deneme" + message)
+}).catch((message) => {
+
+console.log ("deneme" + message);
+
+})
+
+//FETCH -1-
+
+function getJson(){
+
+fetch("https://reqres.in/api/users?page=1").then(function(response){
+
+return response.json();
+
+}).then(function (users){
+  console.log (users);
+
+users.data.forEach(function(user_info) {
+  
+  document.write(user_info.email + "<br>");
+
+});
+users.data.forEach(element => {
+  document.write ("her bir emailin idsi :" + " " + element.id + "<br>");
+});
+});
+
+}
+getJson();
+
+// FETCH 2 
+
+</script>  
+</body>
+</html>

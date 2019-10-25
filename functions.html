@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //PROMİSES
+
+    
+
+
+    //CALLBACK FUNCTİONS
+
+    /*let student =[
+    {name : "mary", score : 75, school : "East"},
+    {name : "jane", score : 45, school : "west"},
+    {name : "watson", score : 25, school : "north"},
+    {name : "bruce", score : 68, school : "south"},
+    {name : "wayne", score : 15, school : "East"},
+    ];
+let processStudents = function(data,callbak){
+
+    for (let = i; i<data.lenght)
+
+}
+*/
+
+
+    function square (x){
+
+        document.write (x+x + "<br>");
+    };
+    let y = 3;
+    square(5);
+    square(y);
+    
+    
+    function pow (a,b){ //B DEĞERİ KADAR A'YI ÇARPAR 3*3*3*3
+        let total = 1;
+        for(let i = 0; i < b; i++){
+            total *=a;
+    }
+    return total;
+    }
+    console.log (pow(3,4));
+    
+//HOİSTİNG
+    dostuff();
+
+    function dostuff(){
+
+        console.log ("do someting");
+    }; 
+
+//HOİSTİNG
+    console.log (t);
+
+    var t ="hoisting denemesi"; // BU DURUMDA EKRANDA UNDENİFED ÇIKAR HENÜZ DEĞİŞKEN OKUNMADAN CONSOLE LOG
+
+    //SCOPE
+
+    const age = 20;
+    const name ="nedim";
+    
+console.log (name);
+
+function SayName(){
+
+console.log ('benim adım ${name}');
+
+}
+SayName();
+
+
+    </script>
+</body>
+</html>

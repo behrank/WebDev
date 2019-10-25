@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS OBJECTS</title>
+</head>
+<body>
+    <script>
+	
+	let student =[
+    {name : "mary", score : 75, school : "East"},
+    {name : "jane", score : 45, school : "west"},
+    {name : "watson", score : 25, school : "north"},
+    {name : "bruce", score : 68, school : "south"},
+    {name : "wayne", score : 15, school : "East"},
+	];
+	
+	if(student.name = "mary"){
+		document.write ("maryyi buldu" + "<br>");
+	}
+
+	student.forEach(function(names){
+
+document.write(names.name + "<br>"); //TÜM ADLARI BASAR
+});
+	
+
+
+    var contacts = [
+		{
+			name : "akira",
+			soy : "kurusava",
+			no : "seven samurai",
+			naton : ["japanese","samurai","drama"]
+		},
+
+		{
+			name : "steven",
+			soy : "spielberg",
+			no : "jurassicpark",
+			naton : ["hollywood","dinazor","thriller"]
+		},
+
+		{
+			name : "james",
+			soy : "cameron",
+			no : "alien",
+			naton : ["sci-fi","space","adventure"]
+		},
+
+		];
+
+
+		function lookup(info, interest) {
+
+			for (var i = 0; i < contacts.length; i++){
+				if(contacts [i].name === info){
+					return	contacts[i][interest] || "böyle birşey yok";
+				};
+				return "calısmadı";
+			};
+
+		};
+
+	var datta = lookup("akira","naton");
+
+			document.write (datta);
+
+
+            // obje oluşturuldu
+		var person = {
+  		firstName: "John",
+  		lastName : "Doe",
+  		id     :  5566
+		}; //obje özellikleri belirtildi..
+
+		var prsn = person ["firstName"] + person.id; //2 farklı yolla obje özelliklerine ulaşıldı
+		document.write (prsn + "<br>");  //obje özellikleri bastırıldı...
+
+		function kntrl (kntrlobj){ //kontrol fonksiyonu oluşturuldu
+
+			if (person.hasOwnProperty(kntrlobj)) { // person objesinin içinde belirtilen nitelik var mı kontrolü
+
+				return person [kntrlobj];
+
+			}else{
+
+				return "mot found";
+			}
+
+		}
+		document.write (kntrl("firstName")+ "<br>");
+
+
+        var obc = { //obje oluştu
+			rambo: "slyvester",  //obje özellikleri
+			terminator: "arnold",
+			conan: "kenan",
+			film : 3
+		};
+		
+		var der = obc.rambo;//obje özellikklerine ulaşıldı
+		document.write ((der)+ "<br>");//obje özellikleri basıldı
+
+		function ctrl(ctrlobj) {
+
+			if (obc.hasOwnProperty(ctrlobj)) {
+
+				return true;
+			}else{
+
+				return false;
+			}
+		}
+		document.write(ctrl("conan")+"<br>");
+	
+		
+
+		// JAVASCRİPT CONSTRUCTORS & OBJECT ORİENTED
+
+		// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+};
+var myFather = new Person("John", "Doe", 50, "blue");
+var myBro = new Person ("ilk","constructor","denemesi","bilgileri");
+document.write (myFather.firstName + "<br>");
+document.write (myBro.eyeColor);
+	
+//PROTOTYPE
+
+const Car = function(color, model, dateManufactured) {
+this.color = color;
+this.model = model;
+this.dateManufactured = dateManufactured;
+};
+Car.prototype.getColor = function() {
+return this.color;
+};
+Car.prototype.getModel = function() {
+return this.model;
+};
+Car.prototype.carDate = function() {
+return `This ${this.model} was manufactured in the year ${this.dateManufactured}`
+}
+let firstCar = new Car('red', 'Ferrari', '1985');
+console.log(firstCar);
+console.log(firstCar.carDate());
+
+
+    </script>
+</body>
+</html>
