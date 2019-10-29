@@ -9,7 +9,26 @@
 </head>
 
 <body>
+    <button id="checkButton" onclick="getJson()">Verileri Çek</button>
+    <button id="deleteButton" onclick="clearTable()">Verileri Sil</button>
 
+    <br>
+    <br>
+    <div id="output" style="width: 900px;">
+        <table style="width:100%" id="myTable">
+                <thead>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Avatar</th>
+                </thead>
+               <tbody>
+
+               </tbody>
+          
+        </table>
+    </div>
     <style>
         table,
         th,
@@ -19,27 +38,19 @@
             text-align: center;
             height: 20px;
         }
+        #checkButton {
+            width: 100px;
+            height: 40px;
+            background-color: lightslategray;
+            color: white;
+        }
+        #deleteButton {
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            color: white;
+        }
     </style>
-    <div id="output" style="width: 900px;">
-        <table style="width:100%" id="myTable">
-            
-                <thead>
-                    <th id="id">id</th>
-                    <th id="email">email</th>
-                    <th>first_name</th>
-                    <th>last_name</th>
-                    <th>avatar</th>
-                </thead>
-                <tr>
-                    <td>id</td>
-                    <td>email</td>
-                    <td>ad</td>
-                    <td>soyad</td>
-                    <td>avatar</td>
-                </tr>
-          
-        </table>
-    </div>
 </body>
 <script src="fetch.js"></script>
 </html>
