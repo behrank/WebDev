@@ -12,3 +12,13 @@ API'den bilgi çekme.
             https://api.github.com
             https://api.github.com/user
             https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv
+
+            loginform getbootstrap
+            emailmi
+            formu koy
+            password hatalı mı kontrol - alert ile 
+            tam anlamıyla login form boş mu dolu mu 
+            alertler farklı
+            getbootstrap exapmles
+            bilgiler var mı yok mu js tuşa basıldığında
+            
