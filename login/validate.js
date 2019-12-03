@@ -30,3 +30,18 @@ function setLoginSuccess() {
     document.getElementById("alert-modal").innerHTML = "Herşey başarılı.";
 }
 
+function postData(event){
+    event.preventDefault();
+
+    fetch('https://reqres.in/api/login', {
+        method: 'POST',
+        headers : new Headers(),
+        body:JSON.stringify({email:mail, password:pass})
+    }).then((res) => res.json())
+    .then((data) =>  console.log(data))
+    .catch((err)=>console.log(err))
+}
+
+
+
+

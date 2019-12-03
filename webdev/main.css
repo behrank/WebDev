@@ -1,0 +1,57 @@
+.brand-logo {
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+.search {
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-right: 10px;
+}
+
+.col-3 {
+    text-align: center;
+}
+.navbar-nav{
+
+    text-align: left;
+    padding-left: 50px;
+    font-size: 25px;
+}
+.nav-link{
+    color:white;
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px solid;
+    text-align: center;
+
+}
+.nav-link:hover{
+    background-color: darkgray;
+}
+
+a{
+
+    color:white
+}
+.dropdown-content{
+ display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a{
+
+    color: black;
+    display: block;
+    text-align: left;
+}
+
+.nav-item:hover .dropdown-content {
+    display: block;
+  }

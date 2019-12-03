@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX LOGİN</title>
+</head>
+
+<body>
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6">
+            <div class="alert alert-danger" role="alert" style="display:none;" id="errorMsg">
+
+            </div>
+            <div class="alert alert-success" role="alert" style="display:none;" id="successMsg">
+
+            </div>
+            <form action="#" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Adresi</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email adresiniz">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" class="form-control" id="password" placeholder="Şifreniz">
+                </div>
+
+                <button type="submit" class="btn btn-primary">GİRİŞ YAP</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+
+        $('loginForm').submit(function () {
+            var email = $('#email').val();
+            var password = $('#password').val();
+
+            $('#errorMsg').hide();
+            $('#successMsg').hide();
+
+            if (!email || !password) {
+                $('#errorMsg').html('Tüm alanları doldurmalısınız!').slideDown('slow');
+                return false;
+            }
+
+            $.ajax({
+                url: "https://reqres.in/api/login",
+                type: "POST",
+                data: {
+                    "email": email,
+                    "password": password
+                },
+                success: function (response) {
+                    console.log(response);
+
+                    $('#successMsg').html('Başarıyla giriş yaptınız! TOKEN: ' + response.token).slideDown('slow');
+                },
+                error: function (response) {
+                    console.log(response);
+                    $('#errorMsg').html('Giriş başarısız kullanıcı bulunamadı! Servisten gelen hata mesajı: ' + response.responseJSON.error).slideDown('slow');
+                }
+            });
+
+            return false;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
