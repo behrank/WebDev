@@ -11,7 +11,7 @@ class Counter extends Component {
 
   render() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary"; // CONDİTİONAL RENDER
+    classes += this.state.value === 0 ? "warning" : "primary"; // CONDİTİONAL RENDER
 
     return (
       <div>
@@ -32,8 +32,8 @@ class Counter extends Component {
     );
   }
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : this.state.value;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : this.state.value;
   }
 }
 
