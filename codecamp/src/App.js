@@ -8,6 +8,7 @@ import schoolProducts from "./components/schoolProducts";
 import School from "./components/SchoolEnv";
 import Demo from "./components/ClassData";
 import UserFetch from "./components/fetch";
+import Form from "./components/form";
 
 function App() {
   const JokeSource = JokesData.map(joke => (
@@ -29,6 +30,7 @@ function App() {
       {ProductsSource}
       <Demo />
       <UserFetch />
+      <Form />
     </div>
   );
 }
