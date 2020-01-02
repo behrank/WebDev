@@ -1,7 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import GenreMovies from "../pages/GenreDetail";
 
-function MovieGenre() {
+class MovieGenre extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      serials: []
+    };
+  }
+ 
+  componentDidMount() {
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=2761666cfb827ef7f1eaaa23c8aab037&language=en-US"
+    )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ serials: data.genres });
+        //console.log(data);
+      });
+  }
+  
+  render() { 
+    const { serials } = this.state;
+    return (
+      <div>
+        <ul className="serial-list">
+          {serials.map(serial => (
+            <li key={serial.id}>
+              <Link to={`/genre/${serial.id}`}>{serial.name}</Link>
+            </li>
+          ))}
+        </ul>
+        
+      </div>
+    );
+  }
+}
+
+
+export default MovieGenre;
+
+
+
+
+/*function MovieGenre() {
   useEffect(() => {
     fetchItems();
   }, []);
@@ -29,43 +72,4 @@ function MovieGenre() {
         </ul>
     </div>
   );
-}
-export default MovieGenre;
-
-/*import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
-class MovieGenre extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      serials: []
-    };
-  }
-
-  componentDidMount() {
-    fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=2761666cfb827ef7f1eaaa23c8aab037&language=en-US"
-    )
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ serials: data.genres });
-        console.log(data);
-      });
-  }
-  render() { 
-    const { serials } = this.state;
-    return (
-      <div>
-        <ul className="serial-list">
-          {serials.map(serial => (
-            <li key={serial.id}>
-              <Link to={`/genre/${serial.id}`}>{serial.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
-*/
+}*/

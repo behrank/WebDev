@@ -1,33 +1,40 @@
-/*import React, { Component } from "react";
-import { Link } from "react-router-dom";*/
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-function GenreMovies({ match }) {
-  useEffect(() => {
-    fetchItem();
-   // console.log(match);
-  }, []);
-
-  const [item, setItem] = useState({});
-
-  const fetchItem = async () => {
-    const fetchItem = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=2761666cfb827ef7f1eaaa23c8aab037&language=en-US&sort_by=with_genres=${match.params.id}&page=1`
-    );
-    const item = await fetchItem.json();
-
-    console.log(item);
+class GenreMovies extends Component {
+  state = {
+    movies: []
   };
-  return (
-    <div> genrdsffds</div>
-  )
+
+  
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=2761666cfb827ef7f1eaaa23c8aab037&language=en-US&with_genres=${id}&page=1`
+    )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ movies: data.results });
+        //console.log(data);
+      });
+  }
+  render() {
+    const { movies } = this.state;
+    //console.log(this.props)
+    return (
+      <div>
+        <ul>
+          {movies.map(movie => (
+            <li key={movie.id}>
+              <Link to={`/${movie.id}`}>{movie.title} </Link>
+            </li>
+          ))}
+        </ul>
+        
+      </div>
+    );
+  }
 }
 
 export default GenreMovies;
 
-//
-//https://api.themoviedb.org/3/discover/movie?api_key=2761666cfb827ef7f1eaaa23c8aab037&language=en-US&sort_by=with_genres=18&page=1
-
-/*
-
-*/
