@@ -6,7 +6,7 @@ class GenreMovies extends Component {
     movies: []
   };
 
-  
+
   componentDidMount() {
     const { id } = this.props.match.params;
     fetch(
@@ -22,15 +22,18 @@ class GenreMovies extends Component {
     const { movies } = this.state;
     //console.log(this.props)
     return (
-      <div>
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/${movie.id}`}>{movie.title} </Link>
-            </li>
-          ))}
-        </ul>
-        
+      <div class="container">
+        {movies.map(movie => (
+          <div class="card" style={{ width: '18rem', float: 'left', margin: '5px' }}>
+            <img src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">{movie.original_title}</p>
+            </div>
+          </div>
+          // <li key={movie.id}>
+          //   <Link to={`/${movie.id}`}>{} </Link>
+          // </li>
+        ))}
       </div>
     );
   }
