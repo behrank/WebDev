@@ -11,6 +11,10 @@ class GenreMovies extends Component {
     };
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae5b04f4853587d3678237c75155d1fdd069f838
   componentDidMount() {
     const { id } = this.props.match.params;
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${this.state.apiKey}&language=en-US&with_genres=${id}&page=1`;
@@ -38,6 +42,7 @@ class GenreMovies extends Component {
     const { movies } = this.state;
     //console.log(this.props)
     return (
+<<<<<<< HEAD
       <div>
         <ul>
           {movies.map(movie => (
@@ -47,6 +52,20 @@ class GenreMovies extends Component {
           ))}
         </ul>
         <button className="btn btn-primary sm" onClick={this.nextPage}>İleri</button>
+=======
+      <div class="container">
+        {movies.map(movie => (
+          <div class="card" style={{ width: '18rem', float: 'left', margin: '5px' }}>
+            <img src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path} class="card-img-top" alt="..." />
+            <div class="card-body">
+              <p class="card-text">{movie.original_title}</p>
+            </div>
+          </div>
+          // <li key={movie.id}>
+          //   <Link to={`/${movie.id}`}>{} </Link>
+          // </li>
+        ))}
+>>>>>>> ae5b04f4853587d3678237c75155d1fdd069f838
       </div>
     );
   }
