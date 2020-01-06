@@ -6,9 +6,6 @@ class NavBar extends Component {
   state = {
     İsOpen: false
   };
-  handleToggle = () => {
-    this.setState({ setState: !this.state.İsOpen });
-  };
   render() {
     return (
       <div>
@@ -21,7 +18,7 @@ class NavBar extends Component {
               <Link to="/genre">Genre</Link>
             </li>
             <li className="nav-item">
-              <Link to="/serials">Serials</Link>
+              <Link to="/serials">Search</Link>
             </li>
           </ul>
         </nav>

@@ -9,6 +9,7 @@ import School from "./components/SchoolEnv";
 import Demo from "./components/ClassData";
 import UserFetch from "./components/fetch";
 import Form from "./components/form";
+import EventAdd from "./components/event";
 
 function App() {
   const JokeSource = JokesData.map(joke => (
@@ -31,6 +32,7 @@ function App() {
       <Demo />
       <UserFetch />
       <Form />
+      <EventAdd />
     </div>
   );
 }
