@@ -9,7 +9,7 @@ class NavBar extends Component {
   render() {
     return (
         <nav className="navbar sticky-top navbar-expand-sm bg-light ">
-            <a class="navbar-brand" href="#">
+            <a className="navbar-brand">
             <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" />
           </a>
           <ul className = "navbar-nav nav justify-content-end">
