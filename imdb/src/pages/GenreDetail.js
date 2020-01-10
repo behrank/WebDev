@@ -19,21 +19,22 @@ class GenreMovies extends Component {
   }
 
   nextPage = () => {
-    let url = '';
-    const nextPageNumber = this.state.currentPage + 1;
+    let url = "";
+    let nextPageNumber = this.state.currentPage;
+    nextPageNumber += 1;
     this.setState({ currentPage: nextPageNumber });
     const { id } = this.props.match.params;
     url = `https://api.themoviedb.org/3/discover/movie?api_key=${this.state.apiKey}&language=en-US&with_genres=${id}&page=${nextPageNumber}`;
     this.fetchItems(url);
-    console.log(this.currentPage)
+   // console.log(this.currentPage);
   };
-
+ 
   fetchItems = url => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
         this.setState({ movies: data.results });
-        console.log(data);
+        //console.log(data);
       });
   };
 
@@ -41,27 +42,23 @@ class GenreMovies extends Component {
     const { movies } = this.state;
     //console.log(this.props)
     return (
-      <React.Fragment>
       <div>
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/${movie.id}`}>{movie.title} </Link>
+              <Link to={`/movie/${movie.id}`}>{movie.title} </Link>
             </li>
           ))}
+          <div>
+          </div>
         </ul>
-       <NextPageBtn text = "ileri" onClick={this.nextPage}/>
+        <NextPageBtn onClick={this.nextPage} />
       </div>
-  
-      </React.Fragment>
-        
     );
   }
 }
 
 export default GenreMovies;
-
-
 
 /*import React, { Component } from "react";
 import { Link } from "react-router-dom";

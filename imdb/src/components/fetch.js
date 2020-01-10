@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import GenreMovies from "../pages/GenreDetail";
 
 class MovieGenre extends Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class MovieGenre extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ serials: data.genres });
-        //console.log(data);
+        console.log(data);
       });
   }
   

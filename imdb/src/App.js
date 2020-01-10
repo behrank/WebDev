@@ -7,6 +7,7 @@ import Home from "./pages/home";
 import GenreDetail from "./pages/GenreDetail";
 import { Route, Switch, Router, Link } from "react-router-dom";
 import NavBar from "./components/navbar";
+import MovieDetail from "./components/MovieDetail";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route exact path="/genre" component={Genre} />
         <Route exact path="/serials" component={Serials} />
         <Route exact path="/genre/:id" component={GenreDetail} />
+        <Route exact path="/movie/:id/" component={MovieDetail} />
+        
       </React.Fragment>
     </div>
   );
