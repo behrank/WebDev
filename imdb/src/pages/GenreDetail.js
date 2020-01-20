@@ -34,7 +34,7 @@ class GenreMovies extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ movies: data.results });
-        //console.log(data);
+        console.log(data);
       });
   };
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MovieInfo from "./MovieInfo";
 import CrewInfo from "./Cast";
+import "./components.css";
 
 class SingleMovie extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class SingleMovie extends Component {
       apiKey: "2761666cfb827ef7f1eaaa23c8aab037",
       directors: [],
       loading: false,
-      actors:[]
+      actors: []
     };
   }
   componentDidMount() {
@@ -49,11 +50,18 @@ class SingleMovie extends Component {
       <div>
         <MovieInfo movie={this.state.movie} directors={this.state.directors} />
         <div className="crew">
-  <h4>Oyuncular</h4>
-    <div className="actors">{this.state.actors.map((element,i) => {
-    return <p key={i}>{element.name} as {element.character}</p>
-
-    })}</div>
+          <h4>Oyuncular</h4>
+          <div className="actors">
+            {this.state.actors.map((element, i) => {
+              return (
+                <ul>
+                  <li id="name" key={i}>
+                    {element.name} as {element.character}
+                  </li>
+                </ul>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
