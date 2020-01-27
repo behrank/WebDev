@@ -1,19 +1,30 @@
 
 
+:root {
+    --single-font: poppins, sans-serif
+}
+
+.nav-item {
+    padding: 0.9em;
+}
+
+.collapse.navbar-collapse {
+    margin-right: 14em;
+}
+
+.brand {
+    margin-left: 14em;
+}
+
 .nav-link {
     color: #ffffff;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
     font-family: poppins, sans-serif;
 }
 
-.nav-link:hover{
-    color: rgb(8,113,166)
-    
-}
-
-.nav-item {
-    padding: 0.6rem;
+.nav-link:hover {
+    color: rgb(8, 113, 166)
 }
 
 .jumbotron {
@@ -21,29 +32,82 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 65vh;
-    
+    min-height: 75vh;
 }
 
-#navbuy {
-    color: #ffffff !important;
-    font-size: 0.8rem;
+.site-text {
+    padding-left: 10em;
+}
+
+.video-box {
+    height: 400;
+    width: 400;
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    padding-left: 20;
+}
+
+.col-lg-6.col-md-6 {
+    padding-left: 20em;
+}
+
+.info {
+    color: #ffffff;
+    font-family: var(--single-font);
+    font-size: 3.5rem;
     font-weight: 700;
-    font-family: poppins, sans-serif;
-    padding: 0.4rem 1.8rem 0.4rem 1.8rem;
+    display: block;
+    letter-spacing: -5px;
 }
 
-.navbar {
-    background: rgb(33, 37, 41);
+.head {
+    font-family: var(--single-font);
+    color: #0088CC;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.para {
+    font-family: var(--single-font);
+    color: #e6e6e6;
 }
 
 .dropdown:hover>.dropdown-menu {
     display: block;
-    background: rgb(33, 37, 41);
 }
 
-.dropdown-item {
-    color: #ffffff;
+.text-primary.text-uppercase {
+    color: #0088cc;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 26px;
 }
 
+h2 {
+    font-family: var(--single-font);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0, 0, 32px, 0;
+    display: block;
+}
 
+p {
+    font-family: var(--single-font);
+    color: #777;
+}
+
+.counter {
+    text-align: center;
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 4.5em;
+}
+
+.font-weight {
+    font-weight: 600;
+    font-family: var(--single-font);
+    font-size: 1.2em;
+}
