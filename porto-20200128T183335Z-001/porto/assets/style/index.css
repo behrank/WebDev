@@ -32,23 +32,26 @@
     background-position: center;
     min-height: 75vh;
 }
-
+/* bunada gerek yok. responsive i bozuyor.
 .site-text {
     padding-left: 10em;
 }
-
+*/
 .video-box {
-    height: 400;
-    width: 400;
     border: 10px solid #ffffff;
     border-radius: 5px;
-    padding-left: 20;
 }
 
+video {
+    float: left!important;
+    height: 400px;
+}
+/* 
+böyle gene şeylere değişiklik yapma. başka bir patlar. buna gerek yok bu arada 
 .col-lg-6.col-md-6 {
     padding-left: 20em;
 }
-
+*/
 .info {
     color: #ffffff;
     font-family: var(--single-font);
@@ -119,16 +122,16 @@ h3 {
 .divider {
     border-left: solid 1px;
     border-color: cadetblue;
-    padding-right: 16rem;
+    /* padding-right: 16rem;  bunu da çıkardım çünkü responsive i bozuyor. */
 }
 
 .numberlabel {
     font-weight: 600;
 }
 
-.counter {
-    padding-left: 16rem;
-}
+/* .counter  {
+    padding-left: 16rem; bunu da çıkardım çünkü responsive i bozuyor.
+} */
 
 .text-color-primary.justify-content-center.text-uppercase {
     font-family: var(--single-font);
@@ -151,10 +154,6 @@ h3 {
 
 .intro {
     margin-top: 5em;
-}
-
-.col-lg-4 {
-    margin-left: 10rem;
 }
 
 .text-7 {
